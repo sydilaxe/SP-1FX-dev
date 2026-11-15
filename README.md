@@ -118,3 +118,14 @@ artifacts.
   `firmware/LICENSE-sp1-tape-looper`.
 - [timknapen/SP-1-dev](https://github.com/timknapen/SP-1-dev): the SP-1's pinout, peripherals and
   bootloader documentation.
+
+## Releasing
+
+Push a tag such as `v0.4.0`, run **Actions → build → Run workflow** with `release_tag` filled in, or
+create a release on GitHub's Releases page. Any of these builds the firmware and the manual, runs the
+tests, and publishes a full release marked **Latest** with `sp1fx.bin` and `SP-1FX-manual.pdf` attached and
+`.github/release-notes.md` as its notes. A tag typed as `V0.4.0` or `0.4.0` is published as `v0.4.0`;
+running again for the same tag replaces the files.
+
+Before tagging, set the new version in `VERSION` and in the README's **Latest release** line (CI checks the
+two match), and put what is new at the top of `.github/release-notes.md`.
